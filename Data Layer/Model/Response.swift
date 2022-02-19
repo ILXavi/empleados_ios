@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Response: Codable{
+struct Response: Codable {
     var status : Int
-    var msg : Any
-    var listado : [Employee]?
+    var msg : String
+    var resp : [Employee]?
 }

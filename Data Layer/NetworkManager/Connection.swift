@@ -8,12 +8,15 @@
 import Foundation
 import UIKit
 
+enum networkError : Error {
+    case invalidToken, badData, errorUrl, errorConection
+}
 
 final class Connection {
     
     let baseUrl = "http://localhost/empleados-app/public/api/"
         
-    func connect(to endpoint: String, params: [String: Any]?, completion: @escaping (Data?) -> Void) {
+    func connect(to endpoint: String, params: [String: Any]?, requestType: String, completion: @escaping (Data?) -> Void) {
         guard let url = URL(string: baseUrl+endpoint) else {
             completion(nil)
             return
@@ -27,7 +30,7 @@ final class Connection {
                 return
             }
             
-            urlRequest.httpMethod = "POST"
+            urlRequest.httpMethod = requestType
             urlRequest.httpBody = paramsData
         }
         
@@ -43,6 +46,8 @@ final class Connection {
         
         let networkTask = urlSession.dataTask(with: urlRequest) {
             data, response, error in
+            
+           
             
             let httpResponse = response as! HTTPURLResponse
             
