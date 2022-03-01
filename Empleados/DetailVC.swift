@@ -9,26 +9,26 @@ import UIKit
 
 class DetailVC: UIViewController{
     
-//    var response: Response?
-    var employee: Employee?
-//    var delegate: DetailViewDelegate?
     
+    var employee: Employee?
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var biographyLabel: UITextView!
     @IBOutlet var jobLabel: UILabel!
     @IBOutlet var salaryLabel: UILabel!
     @IBOutlet var closeBtn: UIButton!
+    @IBOutlet var editProfileBtn: UIButton!
     
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.renderUI()
-        }
-       
-    private func renderUI() {
+    }
     
+    //    Función para cargar los datos de la vista
+    private func renderUI() {
+        
         closeBtn.layer.cornerRadius = closeBtn.frame.height / 2.0
         nameLabel.text = employee?.name
         biographyLabel.text = employee?.biography
@@ -37,16 +37,16 @@ class DetailVC: UIViewController{
             salaryLabel.text = "\(salary)  €"
             
         }
-     
+        
+        //        Guardamos locamente los datos del empleado seleccionado para usarlos en actualizar empleado de ser necesario
+        AppData.shared.selectedEmployee = employee
     }
     
+    //    Funcion para cerrar la vista modal
     @IBAction func backToHome(_ sender:Any){
         
         self.dismiss(animated: true, completion: nil)
         
     }
-    
-    
-   
 }
 

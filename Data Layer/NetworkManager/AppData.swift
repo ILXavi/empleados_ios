@@ -12,5 +12,6 @@ class AppData {
     var apiToken: String = ""
     var employees: [Employee]=[]
     var profile: [Employee]=[]
-    
+    var selectedEmployee : Employee?
+       
 }

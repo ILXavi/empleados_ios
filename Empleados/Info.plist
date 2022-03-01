@@ -21,5 +21,9 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>La cámara sera usada para tomar una nueva foto de perfil.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Se usará la galeria para seleccionar una foto de perfil.</string>
 </dict>
 </plist>

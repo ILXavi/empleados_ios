@@ -11,4 +11,5 @@ struct Response: Codable {
     var status : Int
     var msg : String
     var resp : [Employee]?
+//    var val : Validator?
 }

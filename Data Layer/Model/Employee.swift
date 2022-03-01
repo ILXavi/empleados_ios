@@ -8,12 +8,12 @@
 import Foundation
 
 struct Employee: Codable {
-    //var id: Int = -1
+    var id: Int?
     var name: String?
     var email: String?
     var password: String?
     var job: String?
-    var salary: Int?
+    var salary: Float?
     var biography: String?
     var api_token: String?
 }
